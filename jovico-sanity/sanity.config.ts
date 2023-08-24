@@ -14,11 +14,11 @@ import { pageStructure, singletonPlugin } from './plugins/settings'
 const [author, home, page, post, product, settings] = schemaTypes
 
 export const PREVIEWABLE_DOCUMENT_TYPES = [
-  author.name,
-  home.name,
-  page.name,
-  post.name,
-  product.name,
+  schemaTypes[0].name,
+  schemaTypes[1].name,
+  schemaTypes[2].name,
+  schemaTypes[3].name,
+  schemaTypes[5].name,
 ] satisfies string[]
 
 export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
