@@ -1,13 +1,13 @@
 import { toPlainText } from '@portabletext/react'
 import { HomePage } from '../../components/pages/home/HomePage'
-// import HomePagePreview from '../../components/pages/home/HomePagePreview'
+import HomePagePreview from '../../components/pages/home/HomePagePreview'
 import { getHomePage, getSettings } from '../../lib/sanity.fetch'
-// import { homePageQuery } from '../../lib/sanity.queries'
+import { homePageQuery } from '../../lib/sanity.queries'
 import { defineMetadata } from '../../lib/utils.metadata'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
-// import { LiveQuery } from 'next-sanity/preview/live-query'
+import { LiveQuery } from 'next-sanity/preview/live-query'
 
 export const runtime = 'edge'
 
@@ -29,14 +29,13 @@ export default async function IndexRoute() {
   }
 
   return (
-    /* <LiveQuery
+    <LiveQuery
       enabled={draftMode().isEnabled}
       query={homePageQuery}
       initialData={data}
       as={HomePagePreview}
     >
       <HomePage data={data} />
-    </LiveQuery> */
-    <HomePage data={data} />
+    </LiveQuery>
   )
 }
