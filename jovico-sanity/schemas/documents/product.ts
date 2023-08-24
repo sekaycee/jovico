@@ -89,7 +89,41 @@ export default defineType({
       of: [{ type: 'string' }],
       options: {
         layout: 'tags',
-      }
+      },
+    }),
+    defineField({
+      name: 'images',
+      title: 'Product Images',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'image',
+          icon: ImageIcon,
+          options: {
+            hotspot: true,
+          },
+          preview: {
+            select: {
+              imageUrl: 'asset.url',
+              title: 'caption',
+            },
+          },
+          fields: [
+            defineField({
+              title: 'Caption',
+              name: 'caption',
+              type: 'string',
+            }),
+            defineField({
+              name: 'alt',
+              type: 'string',
+              title: 'Alt text',
+              description:
+                'Alternative text for screenreaders. Falls back on caption if not set',
+            }),
+          ],
+        })
+      ],
     }),
     defineField({
       name: 'description',
@@ -115,42 +149,6 @@ export default defineType({
             ],
           },
           styles: []
-        }),
-        // Custom blocks
-        defineField({
-          icon: ImageIcon,
-          name: 'images',
-          title: 'Images',
-          type: 'array',
-          of: [
-            defineArrayMember({
-              type: 'image',
-              preview: {
-                select: {
-                  imageUrl: 'asset.url',
-                  title: 'caption',
-                },
-              },
-              fields: [
-                defineField({
-                  title: 'Caption',
-                  name: 'caption',
-                  type: 'string',
-                }),
-                defineField({
-                  name: 'alt',
-                  type: 'string',
-                  title: 'Alt text',
-                  description:
-                    'Alternative text for screenreaders. Falls back on caption if not set',
-                }),
-              ],
-            })
-          ],
-          options: {
-            // hotspot: true,
-            layout: 'grid'
-          },
         }),
       ],
     }),
