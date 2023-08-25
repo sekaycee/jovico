@@ -9,7 +9,7 @@ export default function Navbar(props: NavbarProps) {
   const { data } = props
   const menuItems = data?.menuItems || ([] as MenuItem[])
   return (
-    <div className='sticky top-0 z-10 flex flex-wrap items-center gap-x-5 bg-black text-white px-4 py-4 backdrop-blur md:px-16 md:py-5 lg:px-32'>
+    <nav className='sticky top-0 z-10 flex flex-wrap items-center gap-x-5 bg-black text-white px-4 py-4 backdrop-blur md:px-6 md:py-5 lg:px-8'>
       {/* <Link href={'/'} className='uppercase'>Jovico Bikes</Link> */}
       { menuItems && menuItems.map((menuItem, key) => {
         const href = resolveHref(menuItem?._type, menuItem?.slug)
@@ -29,6 +29,6 @@ export default function Navbar(props: NavbarProps) {
           </Link>
         )
       })}
-    </div>
+    </nav>
   )
 }

@@ -24,14 +24,12 @@ export default async function IndexRoute({
     <div className='flex min-h-screen flex-col bg-black text-white'>
       {isDraftMode && <PreviewBanner />}
       <Suspense>
-        {/* @ts-expect-error Async Server Component */}
         <Navbar />
       </Suspense>
-      <div className='mt-20 flex-grow px-4 md:px-16 lg:px-32'>
+      <div className='flex-grow'>
         <Suspense>{children}</Suspense>
       </div>
       <Suspense>
-        {/* @ts-expect-error Async Server Component */}
         <Footer />
       </Suspense>
     </div>
