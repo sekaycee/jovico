@@ -45,15 +45,8 @@ export default defineType({
             annotations: [
               {
                 name: 'link',
-                type: 'object',
+                type: 'link',
                 title: 'Link',
-                fields: [
-                  {
-                    name: 'href',
-                    type: 'url',
-                    title: 'Url',
-                  },
-                ],
               },
             ],
           },

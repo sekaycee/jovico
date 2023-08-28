@@ -13,7 +13,7 @@ export default defineType({
     title: 'Internal Link',
     description: 'Select pages for navigation',
     type: 'reference',
-    to: [{ type: 'page' },{ type: 'post' }], 
+    to: [{ type: 'page' },{ type: 'post' },{ type: 'product' }], 
     }),
     defineField({
       name: 'externalUrl',

@@ -5,22 +5,21 @@ import { MenuIcon } from '@sanity/icons'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'navigationItem',
-  title: 'Navigation Item',
+  name: 'navigationGroup',
+  title: 'Navigation Group',
   type: 'object',
   icon: MenuIcon,
   fields: [
     defineField({
-      name: 'text',
+      name: 'title',
       type: 'string',
-      title: 'Navigation Text',
+      title: 'Navigation Group Title',
       validation: (rule) => rule.required()
     }),
     defineField({
       name: 'navigationItemUrl',
       type: 'link', 
-      title: 'Navigation Item URL',
-      validation: (rule) => rule.required()
+      title: 'Navigation Item URL'
     }),
     defineField({
       name: 'image',
@@ -28,12 +27,12 @@ export default defineType({
       title: 'Navigation Image'
     }),
     defineField({
-      name: 'links',
-      title: 'Navigation item links',
+      name: 'items',
+      title: 'Navigation items',
       type: 'array',
       of: [
         defineArrayMember({
-          type: 'link'
+          type: 'navigationItem'
         })
       ]
     })

@@ -31,6 +31,16 @@ export default defineType({
             type: 'navigationItem'
           })
         ]
+      }),
+      defineField({
+        name: 'group',
+        title: 'Navigation group',
+        type: 'array',
+        of: [
+          defineArrayMember({
+            type: 'navigationGroup'
+          })
+        ]
       })
     ]
 })
