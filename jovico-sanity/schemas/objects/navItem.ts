@@ -19,8 +19,7 @@ export default defineType({
     defineField({
       name: 'navigationItemUrl',
       type: 'link', 
-      title: 'Navigation Item URL',
-      validation: (rule) => rule.required()
+      title: 'Navigation Item URL'
     }),
     defineField({
       name: 'image',
